@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import Ship from "./Ship";
 import Stars from "./Stars";
 import Avatar from '@mui/material/Avatar';
-import Selfie from "./static/images/selfie.jpeg"
+import Selfie from "./static/images/selfie.jpeg";
 import Asteroid from "./Asteroid";
-import LinkedinLogo from "./static/images/linkedin.svg"
-import XingLogo from "./static/images/xing.svg"
-import GithubLogo from "./static/images/github.png"
+import LinkedinLogo from "./static/images/linkedin.svg";
+import XingLogo from "./static/images/xing.svg";
+import GithubLogo from "./static/images/github.png";
+import useWindowDimensions from "./WindowDimensions";
 
 
 
@@ -23,12 +24,13 @@ const MEDIA = {
     XING: "Xing"
   };
 
-
 class Profile extends Component{
 
 
     constructor(props){
         super()
+
+        
         this.state = {
             screen: {
               width: window.innerWidth,
@@ -175,7 +177,7 @@ class Profile extends Component{
         const context = this.state.context;
 
         context.save();
-        context.scale(this.state.screen.ratio, this.state.screen.ratio);
+        //context.scale(this.state.screen.ratio, this.state.screen.ratio);
 
         if (this.keyLeftPressed) this.ship.rotate("LEFT");
         if (this.keyRightPressed) this.ship.rotate("RIGHT");
@@ -214,7 +216,7 @@ class Profile extends Component{
             });
         });
 
-        
+        context.restore();
         requestAnimationFrame(() => {this.update()});
     }
 
@@ -309,8 +311,8 @@ class Profile extends Component{
                     
                 </span>
                 <canvas ref="canvas"
-                    width={this.state.screen.width * this.state.screen.ratio}
-                    height={this.state.screen.height * this.state.screen.ratio}   
+                    width={this.state.screen.width }
+                    height={this.state.screen.height }   
                 />  
             </div>
             
