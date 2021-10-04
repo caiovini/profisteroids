@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Ship from "./Ship";
 import Stars from "./Stars";
 import Avatar from '@mui/material/Avatar';
-import selfie from "./static/images/selfie.jpeg"
+import Selfie from "./static/images/selfie.jpeg"
 import Asteroid from "./Asteroid";
 import LinkedinLogo from "./static/images/linkedin.svg"
 import XingLogo from "./static/images/xing.svg"
@@ -67,6 +67,9 @@ class Profile extends Component{
                 y: 100},
                 id: MEDIA.XING})
         ];
+
+        this.keyLeftPressed = false;
+        this.keyRightPressed = false;
           
     }
 
@@ -126,11 +129,11 @@ class Profile extends Component{
 
         
         if(e.keyCode === KEY.LEFT){
-            this.ship.rotate("LEFT")
+            this.keyLeftPressed = true;
         }
 
         if(e.keyCode === KEY.RIGHT){
-            this.ship.rotate("RIGHT")
+            this.keyRightPressed = true;
         }
 
         if(e.keyCode === KEY.UP){
@@ -157,6 +160,14 @@ class Profile extends Component{
             this.isShooting = false;
         }
 
+        if(e.keyCode === KEY.LEFT){
+            this.keyLeftPressed = false;
+        }
+
+        if(e.keyCode === KEY.RIGHT){
+            this.keyRightPressed = false;
+        }
+
     }
 
     update(){
@@ -165,6 +176,9 @@ class Profile extends Component{
 
         context.save();
         context.scale(this.state.screen.ratio, this.state.screen.ratio);
+
+        if (this.keyLeftPressed) this.ship.rotate("LEFT");
+        if (this.keyRightPressed) this.ship.rotate("RIGHT");
 
         // clear screen
         context.fillStyle = '#000';
@@ -281,12 +295,12 @@ class Profile extends Component{
                 <span className="avatar" >
                     <Avatar
                         alt="Caio Vinicius"
-                        src={selfie}
+                        src={Selfie}
                         sx={{ width: 180, height: 180 }}
                     />   
                     <br/>        
                     Salute,<br/> My name is Caio, I am<br/> a software engineer from Brazil.<br/>
-                    Please, hit the meteors to review<br/> my social media links and feel free<br/>
+                    Please, hit the meteors to reveal<br/> my social media links and feel free<br/>
                     to have a look at my personal projects.
                 </span>   
                 <span className="controls" >

@@ -20,7 +20,7 @@ export default class Ship{
                     { x: -10, y: 10} ]
         }
 
-        this.rotationSpeed = 3.15;
+        this.rotationInertia = 0;
 
         
         // Thruster particles
@@ -36,9 +36,9 @@ export default class Ship{
     rotate(direction){
 
         if (direction === 'LEFT') {
-            this.parms.angle -= this.rotationSpeed;
+            this.rotationInertia = -2;
         } else {
-            this.parms.angle += this.rotationSpeed;
+            this.rotationInertia = 2;
         }
     }
 
@@ -73,6 +73,11 @@ export default class Ship{
 
 
     render(context, screen){
+
+        this.parms.angle += this.rotationInertia;
+
+        if (this.rotationInertia > 0) this.rotationInertia -= 2;
+        if (this.rotationInertia < 0) this.rotationInertia += 2;
         
         if (this.boost)
             this.particle.render(context, this.parms.position, this.parms.angle, 5, 10);
