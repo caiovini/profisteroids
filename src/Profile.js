@@ -7,9 +7,6 @@ import Asteroid from "./Asteroid";
 import LinkedinLogo from "./static/images/linkedin.svg";
 import XingLogo from "./static/images/xing.svg";
 import GithubLogo from "./static/images/github.png";
-import useWindowDimensions from "./WindowDimensions";
-
-
 
 const KEY = {
     LEFT:  37,
