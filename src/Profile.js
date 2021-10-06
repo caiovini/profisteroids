@@ -299,7 +299,7 @@ class Profile extends Component{
                     />   
                     <br/>        
                     Salute,<br/> My name is Caio, I am<br/> a software engineer from Brazil.<br/>
-                    Please, hit the meteors to reveal<br/> my social media links and feel free<br/>
+                    Please, hit the asteroids to reveal<br/> my social media links and feel free<br/>
                     to have a look at my personal projects.
                 </span>   
                 <span className="controls" >
