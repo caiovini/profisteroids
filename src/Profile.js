@@ -323,7 +323,7 @@ class Profile extends Component{
                                             component="img"
                                             height="194"
                                             image={Linkedin_selfie}
-                                            alt="Paella dish"
+                                            alt="linkedin_selfie"
                                         />
                                         <CardContent >
                                             <Typography variant="body2" color="text.primary">
@@ -373,7 +373,7 @@ class Profile extends Component{
                                             component="img"
                                             height="194"
                                             image={Selfie}
-                                            alt="Paella dish"
+                                            alt="github_selfie"
                                         />
                                         <CardContent >
                                             <Typography variant="body2" color="text.primary">
@@ -423,7 +423,7 @@ class Profile extends Component{
                                             component="img"
                                             height="194"
                                             image={Xing_selfie}
-                                            alt="Paella dish"
+                                            alt="xing_selfie"
                                         />
                                         <CardContent >
                                             <Typography variant="body2" color="text.primary">
