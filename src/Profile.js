@@ -312,7 +312,7 @@ class Profile extends Component{
                                 >
                                 { this.state.showLinkedinPreviewLink ?  
                                     <Card style={{backgroundColor: "rgba(255, 255, 255, 0.9)" ,
-                                          opacity: 0.9, bottom: 160, left: 170, position: "fixed"}} 
+                                          opacity: 0.9, bottom: 110, left: 180, position: "fixed"}} 
                                         sx={{ maxWidth: 300, 
                                         color: 'background.paper',
                                         boxShadow: 1,
