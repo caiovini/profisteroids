@@ -9,7 +9,6 @@ h1, p {
   font-family: Lato;
 }
 
-
 canvas {
   display: block;
   background-color: #000000;
@@ -49,24 +48,34 @@ canvas {
   position: absolute;
   width: 100px;
   height: 100px;
+  border-radius:50%;
   z-index: 1;
   
+}
+
+.badge-effect:hover {
+  transform: scale(1.2); 
+  filter: grayscale(0%);
+  filter: gray;
+  -webkit-filter: grayscale(0%);
+  filter: none;
+  transition: 0.1s ease;
 }
 
 .badges.linkedin {
 
   bottom: 50px;
-  left: 2%;
+  left: 5%;
 }
 
 .badges.github {
 
   bottom: 50px;
-  right: 2%;
+  right: 5%;
 }
 
 .badges.xing {
 
   top: 50px;
-  right: 2%;
+  right: 5%;
 }
